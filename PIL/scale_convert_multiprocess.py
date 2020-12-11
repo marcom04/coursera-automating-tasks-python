@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os, sys
+import multiprocessing
 from PIL import Image
 import time
 
@@ -9,14 +10,8 @@ size = (128, 128)
 indir = 'images'
 outdir = 'icons'
 
-start_time = time.time()
-# iterate images inside in folder
-for infile in os.listdir(indir):
-    # skip sub-directories
-    if not os.path.isfile(os.path.join(indir, infile)):
-        continue
 
-    print("Processing {}".format(infile))
+def transform(infile):
     try:
         with Image.open(os.path.join(indir, infile)) as im:
             # rotate image 90° clockwise with Image.rotate and resize image to 128x128 with Image.resize
@@ -29,5 +24,13 @@ for infile in os.listdir(indir):
 
     except OSError as err:
         print("{}: {}".format(infile, err))
-duration = time.time() - start_time
-print("Duration: {} seconds".format(duration))
+
+
+if __name__ == "__main__":
+    files = os.listdir(indir)
+
+    start_time = time.time()
+    with multiprocessing.Pool() as pool:
+        pool.map(transform, files)
+    duration = time.time() - start_time
+    print("Duration: {} seconds".format(duration))
