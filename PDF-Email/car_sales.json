@@ -1,0 +1,41 @@
+[{
+    "id": 1,
+    "car": {
+            "car_make": "Ford",
+            "car_model": "Club wagon",
+            "car_year": 2005
+    },
+    "price": "$10000.05",
+    "total_sales": 149
+},
+{
+    "id": 2,
+    "car": {
+            "car_make": "Acura",
+            "car_model": "TL",
+            "car_year": 2005
+    },
+    "price": "$20000.05",
+    "total_sales": 88
+},
+{
+    "id": 3,
+    "car": {
+            "car_make": "Volkswagen",
+            "car_model": "Golf",
+            "car_year": 2007
+    },
+    "price": "$15000.05",
+    "total_sales": 100
+},
+{
+    "id": 4,
+    "car": {
+            "car_make": "Fiat",
+            "car_model": "Panda",
+            "car_year": 2006
+    },
+    "price": "$7000.05",
+    "total_sales": 166
+}
+]
