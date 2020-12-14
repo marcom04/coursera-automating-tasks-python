@@ -19,7 +19,7 @@ def generate(filename, title, additional_info, table_data):
     report_table = Table(data=table_data, style=table_style, hAlign="LEFT")
     empty_line = Spacer(1,20)
 
-    report_pie = Pie(width=150, height=150)
+    report_pie = Pie(width=400, height=400)
     report_pie.x = 100
     report_pie.sideLabels = 1
     report_pie.data = []
