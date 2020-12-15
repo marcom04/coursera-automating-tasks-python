@@ -11,3 +11,4 @@ for infile in os.listdir(indir):
     if infile.endswith('.jpeg'):
         with open(os.path.join(indir, infile)) as opened:
             response = requests.post(url, files={'file': opened})
+            response.raise_for_status()
