@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 
 from reportlab.platypus import SimpleDocTemplate
-from reportlab.platypus import Paragraph, Spacer, Table, Image
+from reportlab.platypus import Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
-from reportlab.graphics.shapes import Drawing
-from reportlab.graphics.charts.piecharts import Pie
-
 
 def generate_report(attachment, title, paragraph):
     styles = getSampleStyleSheet()
@@ -16,4 +13,3 @@ def generate_report(attachment, title, paragraph):
     empty_line = Spacer(1,20)
     
     report.build([report_title, empty_line, report_info])
-

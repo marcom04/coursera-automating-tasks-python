@@ -9,6 +9,6 @@ indir = 'supplier-data/images'
 # iterate images inside in folder
 for infile in os.listdir(indir):
     if infile.endswith('.jpeg'):
-        with open(os.path.join(indir, infile)) as opened:
+        with open(os.path.join(indir, infile), "rb") as opened:
             response = requests.post(url, files={'file': opened})
             response.raise_for_status()
